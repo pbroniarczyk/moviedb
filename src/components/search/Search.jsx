@@ -14,7 +14,7 @@ class Search extends Component {
                     value={this.props.searchValue}
                     onChange={this.props.handleChangeSearch}
                     type="text"
-                    placeholder="movies, TV shows" />
+                    placeholder="type for movies, TV shows" />
                 <button
                     className="search__btn button"
                     onClick={this.props.getMoviesHandler}
