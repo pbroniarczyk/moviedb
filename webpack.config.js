@@ -24,11 +24,7 @@ module.exports = {
             },
             {
                 test: /\.sass$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "sass-loader",
-                    "css-loader",
-                ]
+                use: [ "style-loader", "css-loader", "sass-loader" ]
             },
             {
                 test: /\.(png|jpg|gif|svg|ico)$/,

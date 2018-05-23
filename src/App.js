@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Components
 import Layout from "./components/Layout.jsx";
+
+// Assets
+import "./global.sass";
 
 class App extends React.Component {
     render() {
-        return(
-            <React.Fragment>
-                <div>TEST!!!!!</div>
-                <Layout />
-            </ React.Fragment>
-        );
+        return <Layout />;
     }
 }
 
