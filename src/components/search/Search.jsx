@@ -13,7 +13,8 @@ class Search extends Component {
                     className="search__input"
                     value={this.props.searchValue}
                     onChange={this.props.handleChangeSearch}
-                    type="text" />
+                    type="text"
+                    placeholder="movies, TV shows" />
                 <button
                     className="search__btn button"
                     onClick={this.props.getMoviesHandler}

@@ -38,19 +38,12 @@ class Layout extends Component {
     }
 
     getMovieDetails = (movie) => {
-        console.log("CLICK", movie)
-        // if(this.state.searchValue.length != 0) {
-        //     let queriedMovie = this.state.searchValue
-        //     console.log("SEARCH === ", queriedMovie)
-
-        // }
         fetch(`http://www.omdbapi.com/?apikey=4d80ca8e&t=${movie}`)
         .then(res => res.json())
         .then(movieDetails => this.setState({ movieDetails }));
     }
     
     render() {
-        console.log("RENDER", this.state.searchValue)
         return(
             <dev className="layout">
                 <Search
