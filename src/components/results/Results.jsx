@@ -22,7 +22,7 @@ class Results extends Component {
     }
 
     render() {
-        console.log("render results", this.props)
+        
         return(
             <div className="results">
                 {

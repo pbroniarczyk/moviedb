@@ -6,11 +6,11 @@ import "./movieItem.sass";
 
 class MovieItem extends Component {
     render() {
-        console.log("RENDER MOVIE DETAILS", this.props)
+        
         return(
             <div className="movieItem">
                 <div className="movieItem__wrapper">
-                    <button className="close">X</button>
+                    <button onClick={this.props.closeMoviecardHandler} className="close">X</button>
                     <section className="movieItem__poster">
                         <img className="poster__image" src={this.props.movieDetails.Poster} alt={this.props.movieDetails.Title}/>
                     </section>

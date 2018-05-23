@@ -6,7 +6,7 @@ import "./results.sass";
 
 class ResultItem extends Component {
     render() {
-        console.log("MOVIE ITEM", this.props)
+        
         const { movie} = this.props;
         return(
             <div className="results__item" onClick={() => this.props.getMovieDetails(this.props.movie.Title)}>

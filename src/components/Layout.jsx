@@ -15,12 +15,14 @@ class Layout extends Component {
         this.state = {
             searchValue: "",
             movieArray: [],
-            movieDetails: ""
+            movieDetails: "",
+            cardIsOpen: false
         }
 
         this.handleChangeSearch = this.handleChangeSearch.bind(this)
         this.getMoviesHandler = this.getMoviesHandler.bind(this)
         this.getMovieDetails = this.getMovieDetails.bind(this)
+        this.closeMoviecardHandler = this.closeMoviecardHandler.bind(this)
     }
 
     handleChangeSearch = (e) => {
@@ -40,10 +42,20 @@ class Layout extends Component {
     getMovieDetails = (movie) => {
         fetch(`http://www.omdbapi.com/?apikey=4d80ca8e&t=${movie}`)
         .then(res => res.json())
-        .then(movieDetails => this.setState({ movieDetails }));
+        .then(movieDetails => {
+            this.setState({ 
+                movieDetails,
+                cardIsOpen: true 
+            })
+        });
+    }
+
+    closeMoviecardHandler = () => {
+        this.setState({ cardIsOpen: false });
     }
     
     render() {
+        console.log(this.state)
         return(
             <dev className="layout">
                 <Search
@@ -54,8 +66,10 @@ class Layout extends Component {
                 <Results results={this.state.movieArray} getMovieDetails={this.getMovieDetails} />
                 
                 {
-                    this.state.movieDetails
-                    ? <MovieItem movieDetails={this.state.movieDetails} />
+                    this.state.cardIsOpen
+                    ? <MovieItem
+                        movieDetails={this.state.movieDetails}
+                        closeMoviecardHandler={this.closeMoviecardHandler} />
                     : null
                 }
             </dev>
