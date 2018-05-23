@@ -27,7 +27,7 @@ class Results extends Component {
             <div className="results">
                 {
                     this.props.results.length != 0
-                    ? this.props.results.Search.map(movie => <ResultItem movie={movie}   />)
+                    ? this.props.results.Search.map(movie => <ResultItem movie={movie} getMovieDetails={this.props.getMovieDetails} />)
                     : null
                 }
             </div>

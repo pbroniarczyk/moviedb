@@ -9,9 +9,11 @@ class ResultItem extends Component {
         console.log("MOVIE ITEM", this.props)
         const { movie} = this.props;
         return(
-            <div className="results__item">
-                <h1 classNanem="item__title">{movie.Title}</h1>
-                <p classNanem="item__year">{movie.Year}</p>
+            <div className="results__item" onClick={() => this.props.getMovieDetails(this.props.movie.Title)}>
+                <div className="item__head">
+                    <h1 className="item__title">{movie.Title}</h1>
+                    <p className="item__year">{movie.Year}</p>
+                </div>
                 <div className="item__poster">
                     <img className="poster__img" src={movie.Poster} alt={movie.Title}/>
                 </div>
