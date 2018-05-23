@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "pawel <pbroniarczyk@outlook.com>",
   "license": "MIT",
-  "homepage": "https://pbroniarczyk.github.io/movie_db/",
+  "homepage": "https://pbroniarczyk.github.io/moviedb/",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack -p",

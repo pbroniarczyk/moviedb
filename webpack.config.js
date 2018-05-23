@@ -9,7 +9,7 @@ module.exports = {
     entry: "./src/App.js",
     output: {
         filename: "bundle.[chunkhash].js",
-        path: path.resolve(__dirname, "_build")
+        path: path.resolve(__dirname, "build")
     },
     module: {
         rules: [
@@ -32,7 +32,7 @@ module.exports = {
                 options: {
                     name: "[name].[ext]",
                     outputPath: "./src/images/",
-                    publicPath: "_build/images/"
+                    publicPath: "build/images/"
                 }
             },
         ]
@@ -51,7 +51,7 @@ module.exports = {
     },
     plugins: [
         require('autoprefixer'),
-        new CleanWebpackPlugin(["./_build"]),
+        new CleanWebpackPlugin(["./build"]),
         new MiniCssExtractPlugin({
             filename: "styles.[chunkhash].css"
         }),
